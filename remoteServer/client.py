@@ -1,12 +1,21 @@
 import network
 import click
+from gtts import tts
+import os
 
 
-ADDRESS ="10.0.0."
+ADDRESS ="10.0.0.113"
 PORT=1111
 
+audio = tts.gTTS("initialisation du programme",lang="fr")
+audio.save("init.mp3")
+os.system("mpg321 init.mp3")
+
 print("z : avancer\nq : gauche\ns : reculer\nd : droite\ne/r : led\na : stop\nc : exit")
-print("entre une lettre pour piloter le robot comme dans la description")
+
+audio= tts.gTTS("entre une lettre pour piloter le robot comme dans la description", lang="fr")
+audio.save("pilote.mp3")
+os.system("mpg321 pilote.mp3")
 
 continuer = True
 while continuer:
@@ -19,6 +28,6 @@ while continuer:
 
     reponse = socket.recv(4096)
     print(reponse)
-    
+
     if lettre == "c":
         continuer = False
