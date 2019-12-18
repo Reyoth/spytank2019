@@ -1,7 +1,7 @@
 import network
 import spytank
 import os
-ADDRESS="10.0.0."
+ADDRESS="192.168.1.209"
 PORT=1111
 
 socket = network.newServerSocket()

@@ -4,7 +4,7 @@ from gtts import tts
 import os
 
 
-ADDRESS ="10.0.0.113"
+ADDRESS ="192.168.1.209"
 PORT=1111
 
 audio = tts.gTTS("initialisation du programme",lang="fr")
