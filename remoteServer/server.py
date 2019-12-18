@@ -26,6 +26,7 @@ while continuer :
     lettre = thread.clientsocket.recv(4096)
     lettre = lettre.decode("utf-8")
     print("message recu : ", lettre)
+    print(stop)
 
     vitesse = 255
     if stop == False :
