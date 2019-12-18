@@ -27,5 +27,6 @@ class detecteur(Thread):
                 spytank.led(1,0)
                 spytank.led(2,0)
                 spytank.led(3,0)
-            
+
+            print(dist)
             return stop
