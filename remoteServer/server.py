@@ -1,6 +1,7 @@
 import network
 import spytank
 import os
+import time
 ADDRESS="192.168.1.209"
 PORT=1111
 
@@ -10,15 +11,20 @@ socket.bind((ADDRESS,PORT))
 continuer = True
 while continuer :
     dist = spytank.litDistance()
-        
-    if dist < 20 :
+    print("distance" ,dist)
+    time.sleep(1)
+
+    if dist < 10 :
         spytank.stop()
         spytank.led(0,1)
         spytank.led(1,1)
         spytank.led(2,1)
         spytank.led(3,1)
         #beep
-        os.system("mpg321 beep.wav")
+        print("beep")
+        #os.system("mpg321 beep.wav")
+        time.sleep(1)
+
     else :
         spytank.led(0,0)
         spytank.led(1,0)
