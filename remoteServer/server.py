@@ -12,7 +12,8 @@ socket.bind((ADDRESS,PORT))
 stop = False
 vitesse = 255
 continuer = True
-thread2 = test.detecteur(stop, continuer)
+thread2 = test.detecteur(stop)
+thread2.daemon = True
 thread2.start()
 while continuer :
 

@@ -7,14 +7,13 @@ import spytank
 class detecteur(Thread):
 
 
-    def __init__(self,stop, continuer):
+    def __init__(self,stop):
         Thread.__init__(self)
         self.stop = stop
-        self.continuer = continuer
 
     def run(self):
         """Code à exécuter pendant l'exécution du thread."""
-        while self.continuer :
+        while True :
             dist = spytank.litDistance()
             if dist < 25 :
                 spytank.stop()
