@@ -55,7 +55,7 @@ while continuer :
         elif lettre == "c":
             spytank.stop()
             continuer = False
-            thread2.stop()
+
     
     thread.clientsocket.send("j'ai bien recu le message".encode())
         
