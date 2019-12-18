@@ -18,7 +18,7 @@ while continuer :
         spytank.led(2,1)
         spytank.led(3,1)
         #beep
-        os.system("beep -f 555 -l 460")
+        os.system("mpg321 beep.wav")
     else :
         spytank.led(0,0)
         spytank.led(1,0)
