@@ -11,7 +11,8 @@ socket = network.newServerSocket()
 socket.bind((ADDRESS,PORT))
 stop = False
 vitesse = 255
-
+thread2 = test.detecteur(stop)
+thread2.start()
 continuer = True
 while continuer :
 
@@ -19,8 +20,6 @@ while continuer :
     print("en ecoute...")
 
     thread = network.newThread(socket.accept())
-    thread2 = test.detecteur(stop)
-    thread2.start()
     thread.start()
 
     #notre communication
