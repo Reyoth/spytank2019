@@ -29,4 +29,5 @@ class detecteur(Thread):
                 spytank.led(3,0)
 
             print(dist)
+            time.sleep(0.5)
             return stop
