@@ -9,6 +9,8 @@ PORT=1111
 
 socket = network.newServerSocket()
 socket.bind((ADDRESS,PORT))
+stop = False
+vitesse = 255
 
 continuer = True
 while continuer :
@@ -17,18 +19,18 @@ while continuer :
     print("en ecoute...")
 
     thread = network.newThread(socket.accept())
-    thread2 = test.detecteur()
+    thread2 = test.detecteur(stop)
     thread2.start()
     thread.start()
 
     #notre communication
-    stop = thread2.run()
+    thread2.run()
     lettre = thread.clientsocket.recv(4096)
     lettre = lettre.decode("utf-8")
     print("message recu : ", lettre)
     print(stop)
 
-    vitesse = 255
+
     if stop == False :
         if lettre == "z":
             spytank.avance(vitesse)
