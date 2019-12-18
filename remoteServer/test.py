@@ -30,4 +30,5 @@ class detecteur(Thread):
                 self.stop = False
 
             print(dist)
+            time.sleep(0.5)
 
