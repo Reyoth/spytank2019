@@ -13,22 +13,21 @@ class detecteur(Thread):
 
     def run(self):
         """Code à exécuter pendant l'exécution du thread."""
-        while True :
-            dist = spytank.litDistance()
-            if dist < 25 :
-                spytank.stop()
-                spytank.led(0,1)
-                spytank.led(1,1)
-                spytank.led(2,1)
-                spytank.led(3,1)
-                self.stop = True
-            else :
-                spytank.led(0,0)
-                spytank.led(1,0)
-                spytank.led(2,0)
-                spytank.led(3,0)
-                self.stop = False
+        dist = spytank.litDistance()
+        if dist < 25 :
+            spytank.stop()
+            spytank.led(0,1)
+            spytank.led(1,1)
+            spytank.led(2,1)
+            spytank.led(3,1)
+            self.stop = True
+        else :
+            spytank.led(0,0)
+            spytank.led(1,0)
+            spytank.led(2,0)
+            spytank.led(3,0)
+            self.stop = False
 
-            print(dist)
-            time.sleep(0.5)
+        print(dist)
+        time.sleep(0.5)
 
