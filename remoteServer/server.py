@@ -24,7 +24,7 @@ while continuer :
     thread.start()
 
     #notre communication
-    thread2.run()
+    #thread2.run()
     lettre = thread.clientsocket.recv(4096)
     lettre = lettre.decode("utf-8")
     print("message recu : ", lettre)
