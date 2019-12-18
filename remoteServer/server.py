@@ -11,9 +11,9 @@ socket = network.newServerSocket()
 socket.bind((ADDRESS,PORT))
 stop = False
 vitesse = 255
-thread2 = test.detecteur(stop)
-thread2.start()
 continuer = True
+thread2 = test.detecteur(stop, continuer)
+thread2.start()
 while continuer :
 
     socket.listen(10)
